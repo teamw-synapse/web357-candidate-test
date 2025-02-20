@@ -1,151 +1,77 @@
-# 🚀 Web357 Test Component - Developer Skills Assessment
+### Package Installation Guide
+------------------------------
+## ✨ Installation Instructions
+To install the package containing both the component and module, follow these steps:
 
-Welcome to the Web357 developer skills assessment! 👋 This is a practical test designed to evaluate your understanding of Joomla component and module development. You'll be working with a basic recipes component and implementing new features, modifying existing functionality, and creating a complementary module.
+Download the Package:
 
-## 📝 Development Requirements
+Obtain the pkg_web357.zip file from the repostory.
+Access Joomla! Administrator Panel:
 
-### 1. Version Control ⭐
+Log in to your Joomla! administrator area.
+Navigate to Extension Manager:
 
--   Create **descriptive commit messages** that clearly explain your changes
--   Make _frequent, atomic commits_ for each logical change
--   ✨ Example of good commit messages:
+If you ahve already installed same component or module please uninstalled first.
+From the top menu, select Extensions > Manage > Install.
+Upload and Install the Package:
 
-    ```
-    // Good commit message example: ✅
-    Add serving size parameter with configuration and display
+In the "Upload Package File" section, click Choose File and select the pkg_web357.zip file.
+Click Upload & Install.
+Upon successful installation, both the component and module will be installed and ready for configuration.
+_____________________________________
+## 📋 Changelog of Modifications
+1) added Component Parameters in config.xml file as below:
+	name ="serving_size" and type="list" with options:
+	1-2 servings
+	2-4 servings
+	4-6 servings
+	6-8 servings
+	8+ servings
 
-    - Added serving_size field to configuration.xml
-    - Created new database column for storing serving sizes
-    - Implemented display logic in site/tmpl/recipe/default.php
-    - Added filter options in administrator/components/list.php
-    - Updated language files with new strings
+2) Updated Frontend Display for difficulty level ("easy", "medium", "hard") with  Font Awesome icons
 
-    // Another good commit example: ✅
-    Update difficulty icons with accessibility improvements
+3) Updated Backend Functionality - 
+	a) Added a filter dropdown in the backend recipes list to filter by difficulty level (easy/medium/hard)
+	b) completed function of filter so it's working accordingly.
 
-    - Replaced text-based difficulty with Font Awesome icons
-    - Added aria-labels for screen readers
-    - Included hidden text for accessibility
-    - Updated CSS for icon spacing and alignment
-    - Added tooltip on hover for better UX
+4) Module Development - 
+  a) Create a module(mod_web357_random_recipe) Admin Name ="Random Recipe Module"
+  b) Display Random recipe with title, difficulty stars and Serving Size
 
-    // Bad commit message example: ❌
-    updates
+----------------------------------
+## 🖼️ Screenshots of New Features
 
-    // Another bad commit message: ❌
-    fixed some stuff
-    ```
+Note: Replace the placeholder text with actual image links or embed the images directly.
 
-### 2. Documentation 📚
+Dashboard Overview:
 
--   Create/update the README.md file in your repository
--   Your README.md should include:
-    -   ✨ Installation instructions
-    -   📋 Changelog of your modifications
-    -   🖼️ Screenshots of new features
-    -   🔍 How to test your changes
-    -   💡 Any assumptions or decisions you made
--   **Important:** Follow [Joomla Coding Standards](https://developer.joomla.org/coding-standards/basic-guidelines.html)
+Module Settings Page:
 
-## 🔧 Getting Started
 
-### Fork & Installation Instructions 📥
+## 🔍 How to Test Your Changes
+-------------------------------
+To ensure the package functions correctly:
 
-1. Download and install **Joomla 5.x** from https://downloads.joomla.org/
-2. Fork this repository to your GitHub account:
-    - Click the "Fork" button at the top right of this page
-    - Select your GitHub account as the destination
-3. Copy the files maintaining the directory structure into your Joomla installation
-4. Install the component through Joomla's Extension Manager
+## Verify Installation:
 
-### Working on the Test 💻
+Confirm that both the component and module appear in the Extension Manager under Manage.
+Test Component Functionality:
 
--   Make your changes in your forked repository
--   Commit regularly with clear messages
--   Push your changes to your fork
--   Keep your fork updated if there are any changes to the original repository
+	a) Navigate to the component via the Joomla! administrator menu >> Web357 Test >> Click on Recipes.
+	b) Click on Options button at the top right >> you can see new paramter added "Default Serving Size"
+	c) When you click on Filter Option button in Recipes page ( Web357 Test >> Click on Recipes), You can see there is new filter added with difficulty level dropdown
+	d) You can create a menu and assigned Recipes view, so you can check Recipes list and there you can see updated values for Difficulty evels and also you can see serving size.
 
-## ✨ Test Requirements
+	NOTE: After installed package you must set Serving Size value then you can see this value in front end.
 
-### 1. Component Parameters 🎛️
+ Perform standard operations to ensure all features work as expected.
 
--   Add a new parameter "_serving_size_" (type="list") with options:
-    -   1-2 servings
-    -   2-4 servings
-    -   4-6 servings
-    -   6-8 servings
-    -   8+ servings
 
-### 2. Frontend Display 🎨
+## Test Module Display(mod_web357_random_recipe):
 
--   Currently, difficulty levels are shown as plain text ("easy", "medium", "hard")
--   **Task:** Replace the text with Font Awesome icons:
-    -   Easy: One icon ⭐
-    -   Medium: Two icons ⭐⭐
-    -   Hard: Three icons ⭐⭐⭐
--   You can choose any appropriate Font Awesome icon
--   _Important:_ Ensure accessibility by keeping the text in a hidden label
--   Display serving size in both recipe list and single recipe views
+Go to Extensions > Modules.
+Ensure the new module is listed and enabled.
+Assign the module to a visible position in your template and check the frontend for proper display.
+You can see there Title has lined with detail recipe page of component.
 
-### 3. Backend Functionality ⚙️
 
--   Add a filter dropdown in the backend recipes list to filter by difficulty level (easy/medium/hard)
--   The filter should:
-    -   Be located in the filters toolbar above the recipes list
-    -   Allow filtering recipes by each difficulty level
-    -   Remember the selected filter state
-    -   Clear when "Clear" button is clicked
-
-### 4. Module Development 📦
-
--   Create a new module (`mod_web357_random_recipe`)
--   Display one random recipe on each page reload
--   Include basic recipe details (title, difficulty icons, serving size)
--   Add a link to the full recipe
-
-### 5. Testing 🧪
-
-Write tests using **PHP Unit** _or_ **Cypress**:
-
--   Test the recipe filtering function by difficulty level
--   Test the random recipe selection in the module
--   _Choose either:_
-    -   🔍 **PHP Unit:** Write unit tests for the component and module functions
-    -   🔄 **Cypress:** Create end-to-end tests for the frontend functionality
-
-## 📤 Submission Requirements
-
-### 1. Repository 📁
-
--   Provide access to your Git repository
--   Ensure the repository includes all commits showing your development process
-
-### 2. Documentation 📝
-
--   Updated README.md with:
-    -   📋 Changelog detailing all modifications
-    -   🖼️ Screenshots of new features
-    -   📥 Installation instructions
-    -   ✅ Testing instructions
-
-### 3. Installable Package 📦
-
--   Provide a ZIP file that can be installed through Joomla's Extension Manager
--   The package should include both the component and module
--   All new features should be functional after installation
-
-**_Important Note:_** The final submission should allow us to install the component and module on a fresh Joomla installation to review all implemented changes.
-
-## 📮 Ready to Submit?
-
-When you've completed all the requirements:
-
-1. Ensure your repository is up to date
-2. Double-check your documentation and screenshots
-3. Create your installable ZIP package
-4. Send an email to careers@web357.com with:
-    - Link to your repository
-    - Your installable ZIP file
-    - Any additional notes or explanations
-
-Good luck! 🍀
