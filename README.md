@@ -44,8 +44,11 @@ _____________________________________
 Note: Replace the placeholder text with actual image links or embed the images directly.
 
 Defualt Serving Size     :  screenshots/added-default-servings-size.png
+
 Admin Filter in Recipes  :  screenshots/admin-Filter.png
+
 Frontend Difficulty stars in Recipes:  screenshots/front-end-hard-level-star-and-module.png
+
 Frontend Difficulty stars in Recipe:  screenshots/recipe-detail-page-with-star.png
 
 ## 🔍 How to Test Your Changes
